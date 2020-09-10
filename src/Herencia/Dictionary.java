@@ -15,6 +15,7 @@ public class Dictionary extends Book{
     public Dictionary(int numDefs, int numPages) {
         super(numPages);
         this.numDefs = numDefs;
+        
     }
     
     

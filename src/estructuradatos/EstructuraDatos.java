@@ -66,6 +66,7 @@ public class EstructuraDatos {
         Dictionary d = new Dictionary(100, 30);
         d.info();
        
+       
     }
     
 }
