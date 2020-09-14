@@ -27,6 +27,12 @@ public class Main {
             System.out.println("no es posible terminar");
         }
         System.out.println(m);
+        
+        
+        //----- Solve Tower
+        
+        TowerOfHanoi towers = new TowerOfHanoi(4);
+        towers.solve();
     }
     
 }

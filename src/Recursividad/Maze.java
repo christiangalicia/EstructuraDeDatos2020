@@ -59,7 +59,7 @@ public class Maze {
         for(int row=0; row<grid.length;row++){
             for(int column=0;column<grid[row].length;column++){
                 result += grid[row][column]+"";
-               
+                
             }
              result +="\n";
         }
