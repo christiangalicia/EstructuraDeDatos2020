@@ -24,9 +24,9 @@ public class TowerOfHanoi {
         if(numDisk==1){
             moveOneDisk(start,end);
         }else{
-          moveTower() 
+          //moveTower() 
             moveOneDisk(start, end);
-          moveTower()
+          //moveTower()
         }
     }
     private void moveOneDisk(int start, int end){
