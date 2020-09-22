@@ -85,4 +85,86 @@ public class SortingAndSearch<T extends  Comparable> {
         } 
     }
     
+    public void quickSort(T[] data, int min, int max){
+        int indexofPartition;
+        if(max -min >0){
+            //creraar la particion
+            indexofPartition= findPartition(data,min,max);
+            //ordena el lado izquierdo
+            quickSort(data, min, indexofPartition-1);
+            //ordenar el lado derecho
+            quickSort(data, indexofPartition+1, max);
+                
+        }
+      
+    }
+    private int findPartition(T[] data, int min, int max){
+        int left, right;
+        T temp,  partitionelement;
+        //ultiliza el primer elemento como pivote
+        partitionelement=data[min];
+        left=min;
+        right=max;
+        while (left<right) {            
+            //buscar un elemento que se mayor que el pivote
+            while (data[left].compareTo(partitionelement)<=0 && left<right) {                
+                left++;
+            }
+            //buscar un elmeento que sea menor que el pivote
+            while (data[right].compareTo(partitionelement)>0) {                
+                right--;
+            }
+            //intercabio de elementos
+            if(left<right){
+                temp= data[left];
+                data[left]=data[right];
+                data[right]=temp;
+            }
+        }
+        //move el elemento hasta el indice de la particion
+        temp= data[min];
+        data[min]= data[right];
+        data[right]=temp;
+        return right;
+    }
+    
+    public void mergeSort(T[] data, int min, int max){
+        T[] temp;
+        int index1, left, right;
+        //busca una lista de longitud 1
+        if(min==max){
+            return;
+        }
+        //calcula la longitud y el punto medio de la lista
+        int size= max-min+1;
+        int pivot= (min+max)/2;
+        temp=(T[])( new Comparable[size]);
+        //ordenar la mitad izquierda
+        mergeSort(data, min, pivot);
+        //ordena la mitad derecha
+        mergeSort(data, pivot+1, max);
+        //copia los datos ordenados 
+        for(index1=0; index1< size; index1++){
+            temp[index1]= data[min+index1];
+        }
+        //mezcla las 2 listas ordenadas
+        left=0;
+        right= pivot-min+1;
+        for(index1=0;index1<size;index1++){
+            if(right<= max-min){
+                if(left<=pivot-min){
+                    if(temp[left].compareTo(temp[right])>0){
+                        data[index1+min]=temp[right++];
+                    }else{
+                         data[index1+min]=temp[left++];
+                    }
+                }else{
+                    data[index1+min]=temp[right++];
+                }
+            }else{
+                data[index1+min]=temp[left++];
+            }
+        }
+    }
+    
 }

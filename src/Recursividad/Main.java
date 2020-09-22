@@ -19,8 +19,9 @@ public class Main {
         
         System.out.println(r.factorial(5));
         
-        Maze m = new Maze();      
-        System.out.println(m);
+        Maze m = new Maze();
+        
+       
         if(m.traverse(0, 0)){
             System.out.println("Terminado");
         }else{
