@@ -24,14 +24,17 @@ public class Main {
             ball = new BingoBall(num);
             bingo.add(ball);
         }
+        System.out.println(bingo);
+        
         System.out.println("Size: " + bingo.size());
         System.out.println();
-        for (int num = 1; num <=NUM_BALLS+1; num++) {
+        for (int num = 1; num <=NUM_BALLS; num++) {
             ball = bingo.removeRandom();
             System.out.println(ball);
         }
         
-                
+           
+        
     }
     
 }

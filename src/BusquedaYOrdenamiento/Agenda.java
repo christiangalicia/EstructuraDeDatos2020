@@ -16,16 +16,16 @@ public class Agenda {
      */
     public static void main(String[] args) {
         Contact[] friends = new Contact[7];
-        friends[0]= new Contact("luis", "garcia", "238393939");
-        friends[1]= new Contact("angel", "lopez", "23223939");
-        friends[2]= new Contact("paco", "garcia", "238394449");
-        friends[3]= new Contact("armando", "sanchez", "23855939");
-        friends[4]= new Contact("maria", "perez", "238393779");
-        friends[5]= new Contact("luis", "sanchez", "238398769");
-        friends[6]= new Contact("diego", "zarate", "233448769");
+        friends[0]= new Contact("Sergio", "Mendez", "238393939");
+        friends[1]= new Contact("Kim", "Nery", "23223939");
+        friends[2]= new Contact("Ivan", "Valencia", "238394449");
+        friends[3]= new Contact("Rocio", "Martinez", "23855939");
+        friends[4]= new Contact("Pedro", "Martinez", "238393779");
+        friends[5]= new Contact("Diana", "Martinez", "238398769");
+        friends[6]= new Contact("Luis", "Perez", "233448769");
         
         SortingAndSearch<Contact> lista =new SortingAndSearch<>();
-        lista.selectionSort(friends);
+        lista.quickSort(friends,0,friends.length-1);
         for (int index = 0; index < friends.length; index++) {
             System.out.println(friends[index]);
         }
