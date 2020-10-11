@@ -14,7 +14,6 @@ import java.util.NoSuchElementException;
  */
 public class ArrayList<T> implements ListADT<T> {
 
-    protected final int W = 50;
     protected final int NOT_FOUND = -1;
     protected int rear;
     protected T[] list;
@@ -27,12 +26,12 @@ public class ArrayList<T> implements ListADT<T> {
 
     @Override
     public T removeFirst() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+        return null;
+            }
 
     @Override
     public T removeLast() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return null;
     }
 
     @Override
@@ -89,7 +88,7 @@ public class ArrayList<T> implements ListADT<T> {
 
     @Override
     public boolean isEmpty() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+            return size()==0;
     }
 
     
