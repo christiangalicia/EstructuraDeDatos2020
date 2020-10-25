@@ -26,12 +26,12 @@ public class ArrayList<T> implements ListADT<T> {
 
     @Override
     public T removeFirst() {
-        return null;
+        return remove(list[0]);
             }
 
     @Override
     public T removeLast() {
-        return null;
+        return remove(list[rear-1]);
     }
 
     @Override
@@ -73,17 +73,30 @@ public class ArrayList<T> implements ListADT<T> {
 
     @Override
     public T first() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return list[0];
     }
 
     @Override
     public T last() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return list[rear-1];
     }
 
     @Override
     public boolean contains(T target) {
-        return true;
+        int scan = 0, result = NOT_FOUND;
+        boolean found = false;
+        if (!isEmpty()) {
+            while (!found && scan < rear) {
+                if (target.equals(list[scan])) {
+                    found = true;
+                } else {
+                    scan++;
+                }
+            }
+
+        }
+        return found;
+       
     }
 
     @Override

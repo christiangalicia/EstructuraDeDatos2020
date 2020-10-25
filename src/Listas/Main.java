@@ -15,12 +15,18 @@ public class Main {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        ArrayOrderList<Integer> lista = new ArrayOrderList<>();
+        LinkedOrderList<Integer> lista = new LinkedOrderList<>();
         lista.add(4);
         lista.add(7);
         lista.add(10);
         lista.add(2);
+        System.out.println(lista);
         System.out.println(lista.removeLast());
+        System.out.println(lista.removeFirst());
+        System.out.println(lista);
+        System.out.println(lista.removeLast());
+        System.out.println(lista.removeFirst());
+        System.out.println(lista);
     }
     
 }

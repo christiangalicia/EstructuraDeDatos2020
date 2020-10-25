@@ -15,7 +15,7 @@ import java.util.Scanner;
 public class TournamentMaker {
      //determina y presenta la organizacion del torneo
     public void make() throws IOException {
-        ArrayOrderList<Team> tournament = new ArrayOrderList<Team>();
+        LinkedOrderList<Team> tournament = new LinkedOrderList<Team>();
         String team1, team2, teamname;
         int numwins, numteams = 0;
 

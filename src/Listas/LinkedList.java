@@ -26,12 +26,12 @@ public class LinkedList<T> implements ListADT<T> {
 
     @Override
     public T removeFirst() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return remove(head.getElement());
     }
 
     @Override
     public T removeLast() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return remove(tail.getElement());
     }
 
     public T remove(T targetElement) throws EmptyStackException {
@@ -69,32 +69,53 @@ public class LinkedList<T> implements ListADT<T> {
 
     @Override
     public T first() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return head.getElement();
     }
 
     @Override
     public T last() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return tail.getElement();
     }
 
     @Override
     public boolean contains(T target) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        boolean found = false;
+        LinearNode<T> previous = null;
+        LinearNode<T> current = head;
+        while (current != null && !found) {
+            if (target.equals(current.getElement())) {
+                found = true;
+            } else {
+                previous = current;
+                current = current.getNext();
+            }
+        }
+        return found;
     }
 
     @Override
     public boolean isEmpty() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return count==0;
     }
 
     @Override
     public int size() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+     return count;
+     }
 
     @Override
     public Iterator<T> itereator() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+    public String toString(){
+        LinearNode<T> current = head;
+        String elementos="";
+        while (current != null ) {    
+            elementos +=current.getElement()+"|";
+                current = current.getNext();  
+                
+        }
+        return elementos;
     }
 
 }
