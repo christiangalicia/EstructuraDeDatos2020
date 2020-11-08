@@ -47,7 +47,7 @@ public class Main {
         //Crear un sistema utilizando pilas  y cola con el que se pueda
         //comprobar  si una cadena de caracteres dada es un palindromo
         
-        ana
+        //Anitalavalatina
     }
     
 }
